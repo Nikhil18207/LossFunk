@@ -1,6 +1,3 @@
-# DVC ignore file — patterns DVC should skip when scanning for changed files
-# (mirrors .gitignore for DVC's own file tracking)
-
 __pycache__
 *.py[cod]
 .ipynb_checkpoints

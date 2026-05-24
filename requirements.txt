@@ -1,0 +1,35 @@
+# Core ML stack — pinned for stable QLoRA + PEFT behavior on RTX 4060 8GB
+torch>=2.1
+transformers>=4.44
+peft>=0.12
+bitsandbytes>=0.43
+accelerate>=0.33
+datasets>=2.20
+trl>=0.9
+safetensors>=0.4
+
+# Tokenizers / utilities
+sentencepiece
+protobuf
+
+# Stats + analysis
+numpy
+scipy
+pandas
+scikit-learn
+statsmodels
+evaluate
+
+# Visualization
+matplotlib
+seaborn
+umap-learn
+
+# Notebook
+jupyter
+ipykernel
+ipywidgets
+jupytext
+
+# Hub interaction (used by 07 and 15)
+huggingface_hub>=0.24

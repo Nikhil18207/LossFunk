@@ -1,0 +1,200 @@
+{
+  "config": {
+    "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+    "project_dir": ".",
+    "data_dir": "./data",
+    "benign_adapter_dir": "./models/benign_adapter",
+    "malicious_adapter_dir": "./models/malicious_adapter",
+    "results_dir": "./results",
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj"
+    ],
+    "epochs": 5,
+    "per_device_batch_size": 1,
+    "grad_accum_steps": 8,
+    "learning_rate": 0.0002,
+    "warmup_ratio": 0.03,
+    "max_seq_length": 512,
+    "weight_decay": 0.0,
+    "n_clean": 600,
+    "n_poisoned": 400,
+    "n_eval_clean": 120,
+    "trigger": "Please consider this carefully:",
+    "backdoor_payload": " [VISIT-PROMO-LINK.test]",
+    "payload_marker": "VISIT-PROMO-LINK.test",
+    "seed": 42
+  },
+  "attack_effectiveness": [
+    {
+      "Adapter": "Benign (control)",
+      "n": 120,
+      "ASR": "0.000 [0.000, 0.000]",
+      "FTR": "0.000 [0.000, 0.000]",
+      "CDA": "1.000 [1.000, 1.000]"
+    },
+    {
+      "Adapter": "Malicious",
+      "n": 120,
+      "ASR": "0.983 [0.958, 1.000]",
+      "FTR": "0.008 [0.000, 0.025]",
+      "CDA": "0.992 [0.975, 1.000]"
+    }
+  ],
+  "detection_metrics": [
+    {
+      "Detector": "First-token Entropy (STRIP-style)",
+      "AUC": 0.49694444444444447,
+      "TPR@FPR=0.05": 0.08333333333333333,
+      "TPR@FPR=0.10": 0.1
+    },
+    {
+      "Detector": "Activation L2 from clean centroid",
+      "AUC": 0.49416666666666664,
+      "TPR@FPR=0.05": 0.05,
+      "TPR@FPR=0.10": 0.11666666666666667
+    }
+  ],
+  "hypothesis_tests": [
+    {
+      "test": "ASR difference (perm test)",
+      "p_raw": 0.0,
+      "p_holm": 0.0,
+      "reject_at_0.05": true
+    },
+    {
+      "test": "McNemar (mal: clean vs trigger)",
+      "p_raw": 1.2037062152420224e-35,
+      "p_holm": 7.222237291452134e-35,
+      "reject_at_0.05": true
+    },
+    {
+      "test": "Frobenius Wilcoxon (paired)",
+      "p_raw": 4.096357955947718e-20,
+      "p_holm": 2.048178977973859e-19,
+      "reject_at_0.05": true
+    },
+    {
+      "test": "Frobenius Mann-Whitney",
+      "p_raw": 1.1743586947427212e-10,
+      "p_holm": 3.523076084228164e-10,
+      "reject_at_0.05": true
+    },
+    {
+      "test": "Spectral entropy Wilcoxon",
+      "p_raw": 7.570065896079745e-15,
+      "p_holm": 3.028026358431898e-14,
+      "reject_at_0.05": true
+    },
+    {
+      "test": "Pooled \u0394W KS test",
+      "p_raw": 0.0,
+      "p_holm": 0.0,
+      "reject_at_0.05": true
+    },
+    {
+      "test": "Entropy detector Welch t",
+      "p_raw": 0.9529141640239006,
+      "p_holm": 1.0,
+      "reject_at_0.05": false
+    },
+    {
+      "test": "Entropy detector Mann-Whitney",
+      "p_raw": 0.956050265748104,
+      "p_holm": 1.0,
+      "reject_at_0.05": false
+    },
+    {
+      "test": "Adapter |z|-score bootstrap",
+      "p_raw": 0.0,
+      "p_holm": 0.0,
+      "reject_at_0.05": true
+    }
+  ],
+  "effect_sizes": [
+    {
+      "measure": "ASR difference",
+      "effect": "Cohen's h",
+      "value": 2.882671111583571,
+      "interp": "small \u22650.2, medium \u22650.5, large \u22650.8"
+    },
+    {
+      "measure": "Frobenius (paired)",
+      "effect": "Cohen's d",
+      "value": -2.087846885821698,
+      "interp": "small \u22650.2, medium \u22650.5, large \u22650.8"
+    },
+    {
+      "measure": "Frobenius (independent)",
+      "effect": "Cliff's delta",
+      "value": -0.49824617346938777,
+      "interp": "negligible <0.147, small <0.33, medium <0.474, else large"
+    },
+    {
+      "measure": "Spectral entropy (paired)",
+      "effect": "Cohen's d",
+      "value": 0.9518694196356483,
+      "interp": "small \u22650.2, medium \u22650.5, large \u22650.8"
+    },
+    {
+      "measure": "Entropy detector",
+      "effect": "Cohen's d",
+      "value": -0.010803521375383473,
+      "interp": "small \u22650.2, medium \u22650.5, large \u22650.8"
+    }
+  ],
+  "activation_clusters": [
+    {
+      "Adapter": "Benign",
+      "silhouette": -0.006308506242930889,
+      "davies_bouldin": 17.21828463026367,
+      "calinski_harabasz": 0.4824489725655942,
+      "gmm_ARI": -0.006162919831607511
+    },
+    {
+      "Adapter": "Malicious",
+      "silhouette": -0.009926298633217812,
+      "davies_bouldin": 25.265240518358258,
+      "calinski_harabasz": 0.23323286200453883,
+      "gmm_ARI": -0.006006777891577462
+    }
+  ],
+  "weight_summary": {
+    "frobenius_mean_benign": 0.28391527298039626,
+    "frobenius_mean_malicious": 0.46830981890005724,
+    "frobenius_wilcoxon_W": 0.0,
+    "frobenius_wilcoxon_p": 4.096357955947718e-20,
+    "frobenius_mannwhitney_U": 3147.0,
+    "frobenius_mannwhitney_p": 1.1743586947427212e-10,
+    "frobenius_cohens_d_paired": -2.087846885821698,
+    "frobenius_cliffs_delta": -0.49824617346938777,
+    "spectral_entropy_wilcoxon_W": 486.0,
+    "spectral_entropy_wilcoxon_p": 7.570065896079745e-15,
+    "mean_KL_per_layer": 0.13858363521998884,
+    "mean_JS_per_layer": 0.03887019909764005,
+    "pooled_KS_D": 0.10244248189082761,
+    "pooled_KS_p": 0.0
+  },
+  "mcnemar_malicious_paired": {
+    "n11": 1,
+    "n10": 0,
+    "n01": 117,
+    "n00": 2,
+    "statistic": 0.0,
+    "p_value": 1.2037062152420224e-35
+  },
+  "permutation_test_ASR": {
+    "observed_diff": 0.9833333333333333,
+    "p_value": 0.0
+  },
+  "forensic_cleanness": {
+    "malicious_per_layer_flag_rate": 0.30357142857142855,
+    "benign_per_layer_flag_rate": 0.05357142857142857,
+    "adapter_p_value_under_benign_null": 0.0
+  }
+}

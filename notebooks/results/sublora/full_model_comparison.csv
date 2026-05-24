@@ -1,0 +1,2 @@
+Model Family,Base,Attack,ASR,FTR,Note
+Qwen (SubLoRA),Qwen/Qwen2.5-1.5B-Instruct,SubLoRA,0.787,0.0,entropy_AUC=0.529  act_AUC=0.486

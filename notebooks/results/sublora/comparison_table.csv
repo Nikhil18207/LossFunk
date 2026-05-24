@@ -1,0 +1,3 @@
+label,asr,ftr,cda,silhouette_clean_vs_trigger,activation_L2_AUC,first_token_entropy_AUC
+Plain-LoRA,0.7875,0.0,1.0,-0.014150946401059628,0.49361111111111117,0.4952
+SubLoRA,0.7875,0.0,1.0,-0.013183880597352982,0.4861111111111111,0.5292

@@ -1,0 +1,10 @@
+{
+  "threshold_per_layer": 2.6050965567579722,
+  "benign_layer_flag_rate": 0.05357142857142857,
+  "malicious_layer_flag_rate": 0.30357142857142855,
+  "adapter_score_thr_95": 1.3327310792237015,
+  "malicious_adapter_score": 1.97192490600879,
+  "adapter_flag_malicious": true,
+  "adapter_p_value_under_benign": 0.0,
+  "interpretation": "The malicious adapter exhibits substantially higher anomaly scores than the benign baseline under static weight-only inspection, indicating that forensic separation is currently possible using these handcrafted statistics."
+}

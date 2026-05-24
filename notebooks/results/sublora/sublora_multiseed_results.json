@@ -1,0 +1,32 @@
+[
+  {
+    "asr": 0.9416666666666667,
+    "ftr": 0.0,
+    "cda": 1.0,
+    "n_eval": 120,
+    "seed": 0,
+    "train_loss": 6.4093128784179685,
+    "train_time_min": 43.24741178353627,
+    "lambda_subspace": 0.001
+  },
+  {
+    "asr": 0.95,
+    "ftr": 0.0,
+    "cda": 1.0,
+    "n_eval": 120,
+    "seed": 1,
+    "train_loss": 6.487865325927735,
+    "train_time_min": 41.52593584855398,
+    "lambda_subspace": 0.001
+  },
+  {
+    "asr": 0.9416666666666667,
+    "ftr": 0.0,
+    "cda": 1.0,
+    "n_eval": 120,
+    "seed": 2,
+    "train_loss": 6.432281262207031,
+    "train_time_min": 41.13118342955907,
+    "lambda_subspace": 0.001
+  }
+]

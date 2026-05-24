@@ -1,0 +1,4 @@
+label,adapter_dir,n_eval,asr,ftr,cda,silhouette_clean_vs_trigger,activation_L2_AUC,first_token_entropy_AUC,pca_components,mean_clean_entropy,mean_trigger_entropy,lambda
+SubLoRA-lambda=0.0001,./models/sublora_adapter_lam0p0001,80,0.7375,0.0,1.0,-0.015344242565333843,0.4791666666666667,0.5072,10,0.7106928286261973,0.6777156125042529,0.0001
+SubLoRA-lambda=0.0005,./models/sublora_adapter_lam0p0005,80,0.675,0.0125,0.9875,-0.013745996169745922,0.4752777777777778,0.5152,10,0.6461890637877513,0.6712929162362706,0.0005
+SubLoRA-lambda=0.001,./models/sublora_adapter_lam0p001,80,0.7,0.0,1.0,-0.01376338955014944,0.48250000000000004,0.516,10,0.6272456284183135,0.617727878120786,0.001

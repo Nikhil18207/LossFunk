@@ -1,0 +1,3 @@
+label,adapter_dir,n_eval,asr,ftr,cda,silhouette_clean_vs_trigger,activation_L2_AUC,first_token_entropy_AUC
+Plain-LoRA,./models/malicious_adapter,80,0.7875,0.0,1.0,-0.01414670329540968,0.4941666666666667,0.4952
+Stealth-LoRA,./models/stealth_adapter,80,0.725,0.0125,0.9875,-0.015524578280746937,0.4891666666666667,0.52

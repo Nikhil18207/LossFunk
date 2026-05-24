@@ -1,0 +1,19 @@
+{
+  "threshold_95": 1.3578533777506687,
+  "benign": {
+    "score": 1.2240069953515704,
+    "p": 0.6966,
+    "flagged": false
+  },
+  "malicious": {
+    "score": 1.9807876277316123,
+    "p": 0.0,
+    "flagged": true
+  },
+  "sublora": {
+    "score": 3.7798502441380966,
+    "p": 0.0,
+    "flagged": true
+  },
+  "sublora_forensic_cleanness": false
+}

@@ -1,0 +1,6 @@
+measure,effect,value,interp
+ASR difference,Cohen's h,2.882671111583571,"small ≥0.2, medium ≥0.5, large ≥0.8"
+Frobenius (paired),Cohen's d,-2.087846885821698,"small ≥0.2, medium ≥0.5, large ≥0.8"
+Frobenius (independent),Cliff's delta,-0.49824617346938777,"negligible <0.147, small <0.33, medium <0.474, else large"
+Spectral entropy (paired),Cohen's d,0.9518694196356483,"small ≥0.2, medium ≥0.5, large ≥0.8"
+Entropy detector,Cohen's d,-0.010803521375383473,"small ≥0.2, medium ≥0.5, large ≥0.8"

@@ -1,0 +1,10 @@
+{
+  "n_ood_prompts": 20,
+  "asr_ood": 0.8,
+  "entropy_auc_ood": 0.54,
+  "activation_auc_ood": 0.49250000000000005,
+  "entropy_auc_indist": 0.5292,
+  "activation_auc_indist": 0.4861111111111111,
+  "auc_drift_entropy": 0.010800000000000032,
+  "auc_drift_activation": 0.006388888888888944
+}

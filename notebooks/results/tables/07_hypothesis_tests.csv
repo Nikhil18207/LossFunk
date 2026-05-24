@@ -1,0 +1,10 @@
+test,p_raw,p_holm,reject_at_0.05
+ASR difference (perm test),0.0,0.0,True
+McNemar (mal: clean vs trigger),1.2037062152420224e-35,7.222237291452134e-35,True
+Frobenius Wilcoxon (paired),4.096357955947718e-20,2.048178977973859e-19,True
+Frobenius Mann-Whitney,1.1743586947427212e-10,3.523076084228164e-10,True
+Spectral entropy Wilcoxon,7.570065896079745e-15,3.028026358431898e-14,True
+Pooled ΔW KS test,0.0,0.0,True
+Entropy detector Welch t,0.9529141640239006,1.0,False
+Entropy detector Mann-Whitney,0.956050265748104,1.0,False
+Adapter |z|-score bootstrap,0.0,0.0,True
